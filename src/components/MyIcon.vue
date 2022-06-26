@@ -1,13 +1,16 @@
 <template>
-<div>
-  <!-- 一级占位符 -->
- <router-view></router-view>
-</div>
+  <i class="toutiao" :class="'toutiao-' + name"></i>
 </template>
 
 <script>
 export default {
-  created () {},
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
+  created () { },
   data () {
     return {}
   },
@@ -19,6 +22,5 @@ export default {
 }
 </script>
 
-<style scoped lang='less'>
-
+<style scoped>
 </style>
