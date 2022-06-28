@@ -1,7 +1,12 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
-      <van-icon name="cross" slot="left" />
+    <van-nav-bar
+      title="登录"
+      name="cross"
+      left-arrow
+      @click-left="$router.back()"
+    >
+      <van-icon />
     </van-nav-bar>
     <van-form @submit="onSubmit" ref="form">
       <van-field
@@ -60,10 +65,11 @@
 import { getSms, login } from '@/Api/user.js'
 
 export default {
+  name: 'login',
   created () { },
   data () {
     return {
-      mobile: '13911111111', // 手机号
+      mobile: '18855036235', // 手机号
       code: '246810', // 短信验证码
       time: 5 * 1000,
       isCountDownShow: false
@@ -74,6 +80,7 @@ export default {
       try {
         const res = await login(values)
         this.$store.commit('setuser', res.data.data)
+        this.$router.push({ name: 'my' })
         console.log(res)
       } catch (error) {
         console.log(error)
