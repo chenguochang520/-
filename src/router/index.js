@@ -6,6 +6,7 @@ const My = () => import('@/views/My')
 const Question = () => import('@/views/Question')
 const Video = () => import('@/views/Video')
 const Login = () => import('@/views/Login')
+const Search = () => import('@/views/Search')
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,13 +15,14 @@ const routes = [
     component: Layout,
     redirect: '/home',
     children: [
-      { path: 'home', component: Home },
+      { path: 'home', component: Home, name: 'home' },
       { path: 'my', component: My, name: 'my' },
       { path: 'question', component: Question },
       { path: 'video', component: Video },
       { path: 'login', component: Login, name: 'login' }
     ]
-  }
+  },
+  { path: '/search', component: Search, name: 'search' }
 ]
 
 const router = new VueRouter({

@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import store from '@/store'
+// import store from '@/store'
 // 获取验证码
 export const getSms = (mobile) => {
   return request({
@@ -20,9 +20,9 @@ export const login = ({ mobile, code }) => {
 
 export const getUserInfo = () => {
   return request({
-    url: 'user',
-    headers: {
-      Authorization: 'Bearer ' + store.state.users.token
-    }
+    url: 'user'
+    // headers: {
+    //   Authorization: 'Bearer ' + store.state.users.token
+    // }
   })
 }
