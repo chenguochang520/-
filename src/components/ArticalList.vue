@@ -81,7 +81,6 @@ export default {
         this.articleList.push(...res.data.data.results)
         // 当数据加载完毕后将加载事件关闭
         this.loading = false
-        console.log(res)
       } catch (error) {
         console.log(error)
       }

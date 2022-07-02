@@ -8,7 +8,7 @@
           icon="search"
           class="search-btn"
           size="mini"
-          @click="$router.push({ name: 'search' })"
+          to="/search"
           >搜索</van-button
         >
       </template>
