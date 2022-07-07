@@ -45,11 +45,10 @@ export default {
         const res = await getSearchResult({ page: this.page, per_page: this.per_page, q: this.searchText })
         if (res.data.data.results.length === 0) {
           this.finished = true
-          this.refreshing = false
           return
         }
         this.resultList.push(...res.data.data.results)
-        this.loding = true
+        this.loding = false
         this.refreshing = false
         console.log(res)
       } catch (error) {
@@ -66,7 +65,7 @@ export default {
 
       // 重新加载数据
       // 将 loading 设置为 true，表示处于加载状态
-      this.loading = true
+
       this.onLoad()
       this.page++
       this.resultList = []
