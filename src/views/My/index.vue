@@ -10,25 +10,25 @@
             height="1.76rem"
             :src="userinfo.photo"
           />
-          <span>{{userinfo.name}}</span>
+          <span>{{ userinfo.name }}</span>
         </div>
-        <button>编辑资料</button>
+        <button @click="$router.push({ name: 'user' })">编辑资料</button>
       </div>
       <ul class="list">
         <li>
-          <p>{{userinfo.art_count}}</p>
+          <p>{{ userinfo.art_count }}</p>
           <p>头条</p>
         </li>
         <li>
-          <p>{{userinfo.like_count}}</p>
+          <p>{{ userinfo.like_count }}</p>
           <p>关注</p>
         </li>
         <li>
-          <p>{{userinfo.fans_count}}</p>
+          <p>{{ userinfo.fans_count }}</p>
           <p>粉丝</p>
         </li>
         <li>
-          <p>{{userinfo.follow_count}}</p>
+          <p>{{ userinfo.follow_count }}</p>
           <p>获赞</p>
         </li>
       </ul>
